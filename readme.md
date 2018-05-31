@@ -2,7 +2,7 @@
 
 > A sexy image comparison slider for React.
 
-[![NPM](https://img.shields.io/npm/v/react-before-after-slider.svg)](https://www.npmjs.com/package/react-before-after-slider) [![Build Status](https://travis-ci.com/transitive-bullshit/react-starfield-animation.svg?branch=master)](https://travis-ci.com/transitive-bullshit/react-starfield-animation) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/react-before-after-slider.svg)](https://www.npmjs.com/package/react-before-after-slider) [![Build Status](https://travis-ci.com/transitive-bullshit/react-before-after-slider.svg?branch=master)](https://travis-ci.com/transitive-bullshit/react-before-after-slider) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 This component is perfect for displaying the differences between two images, allowing the user to slide over them for an enticing before & after reveal effect.
 
