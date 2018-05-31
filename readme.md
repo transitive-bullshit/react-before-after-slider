@@ -54,7 +54,7 @@ class Example extends Component {
 | `afterProps`     | object           | { }                                  | Optional extra props to pass to the after [BlockImage](https://github.com/transitive-bullshit/react-block-image).  |
 | `...`           | ...              | undefined                            | Any other props are applied to the root div element. |
 
-Note that both `before` and `after` will by default be displayed as background images with `background-size: cover` via [react-block-image](https://github.com/transitive-bullshit/react-block-image).
+Note that by default, both `before` and `after` will be displayed as background images with `background-size: cover` via [react-block-image](https://github.com/transitive-bullshit/react-block-image).
 
 ## Todo
 
