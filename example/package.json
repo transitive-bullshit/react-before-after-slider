@@ -5,16 +5,35 @@
   "private": true,
   "license": "MIT",
   "dependencies": {
+    "material-ui": "^0.20.1",
     "prop-types": "^15.6.1",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0",
     "react-before-after-slider": "link:..",
-    "react-scripts": "^1.1.1"
+    "react-dom": "^16.2.0",
+    "react-scripts": "2.0.0-next.66cc7a90",
+    "react-tap-event-plugin": "^3.0.3"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+
+  },
+  "devDependencies": {
+    "react-app-rewired": "^1.5.2"
+  },
+  "browserslist": {
+    "development": [
+      "last 2 chrome versions",
+      "last 2 firefox versions",
+      "last 2 edge versions"
+    ],
+    "production": [
+      ">1%",
+      "last 4 versions",
+      "Firefox ESR",
+      "not ie < 11"
+    ]
   }
 }

@@ -1,0 +1,33 @@
+.ribbon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.main {
+  border: 1px solid #000;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.loading {
+  position: absolute !important;
+  display: block !important;
+  top: 16px;
+  left: 16px;
+}

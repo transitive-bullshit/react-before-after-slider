@@ -1,8 +1,41 @@
-/* add css styles here (optional) */
+.container {
+  position: relative;
+}
 
-.test {
-  display: inline-block;
-  margin: 2em auto;
-  border: 2px solid #000;
-  font-size: 2em;
+.wrapper {
+  position: absolute;
+  width: 120%;
+  height: 100%;
+  top: -10%;
+  left: -10%;
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: col-resize;
+}
+
+.content, .before, .after {
+  width: 100%;
+  height: 100%;
+}
+
+.afterWrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  overflow: hidden;
+}
+
+.handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin-left: -1px;
+  width: 2px;
+  background: #fff;
 }

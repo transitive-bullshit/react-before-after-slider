@@ -1,7 +1,7 @@
-import ExampleComponent from './'
+import BeforeAfterSlider from '.'
 
-describe('ExampleComponent', () => {
+describe('BeforeAfterSlider', () => {
   it('is truthy', () => {
-    expect(ExampleComponent).toBeTruthy()
+    expect(BeforeAfterSlider).toBeTruthy()
   })
 })
