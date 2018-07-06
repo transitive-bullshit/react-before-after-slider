@@ -11,8 +11,7 @@
     "react"
   ],
   "parserOptions": {
-    "sourceType": "module",
-    "allowImportExportEverywhere": true
+    "sourceType": "module"
   },
   "rules": {
     // don't force es6 functions to include space before paren
