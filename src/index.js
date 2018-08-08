@@ -107,13 +107,13 @@ export default class BeforeAfterSlider extends Component {
           ]
           : [
             <div
-              key={0}
+              key={2}
               className={styles.wrapper}
               ref={this._contentRef}
               onMouseMove={this._onMouseMoveWrapper}
             />,
             <div
-              key={1}
+              key={3}
               className={styles.content}
               onMouseMove={this._onMouseMoveContent}
             />
