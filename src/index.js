@@ -90,35 +90,18 @@ export default class BeforeAfterSlider extends Component {
           }}
         />
 
-        {deviceDetect.isMobile
-          // TODO we can move this deeper down...
-          ? [
-            <div
-              key={0}
-              className={styles.wrapper}
-              ref={this._contentRef}
-              onTouchMove={this._onTouchMoveWrapper}
-            />,
-            <div
-              key={1}
-              className={styles.content}
-              onTouchMove={this._onTouchMoveContent}
-            />
-          ]
-          : [
-            <div
-              key={2}
-              className={styles.wrapper}
-              ref={this._contentRef}
-              onMouseMove={this._onMouseMoveWrapper}
-            />,
-            <div
-              key={3}
-              className={styles.content}
-              onMouseMove={this._onMouseMoveContent}
-            />
-          ]
-        }
+        <div
+          className={styles.wrapper}
+          ref={this._contentRef}
+          onTouchMove={this._onMoveWrapper}
+          onMouseMove={this._onMoveWrapper}
+        />
+
+        <div
+          className={styles.content}
+          onTouchMove={this._onMoveContent}
+          onMouseMove={this._onMoveContent}
+        />
 
       </div>
     )
@@ -128,33 +111,25 @@ export default class BeforeAfterSlider extends Component {
     this._content = ref
   }
 
-  _onMouseMoveWrapper = (event) => {
-    const { offsetX } = event.nativeEvent
+  _onMoveWrapper = (event) => {
+    event.preventDefault()
+    let { offsetX } = event.nativeEvent
+    if (!offsetX) {
+      const rect = event.target.getBoundingClientRect()
+      offsetX = event.targetTouches[0].pageX - rect.left
+    }
     const { width } = this.props
     const progress = Math.max(0, Math.min(1, (offsetX - width / 10) / width))
     this.setState({ progress })
   }
 
-  _onMouseMoveContent = (event) => {
-    const { offsetX } = event.nativeEvent
-    const { width } = this.props
-    const progress = Math.max(0, Math.min(1, offsetX / width))
-    this.setState({ progress })
-  }
-
-  _onTouchMoveWrapper = (event) => {
+  _onMoveContent = (event) => {
     event.preventDefault()
-    const rect = event.target.getBoundingClientRect()
-    const offsetX = event.targetTouches[0].pageX - rect.left
-    const { width } = this.props
-    const progress = Math.max(0, Math.min(1, (offsetX - width / 10) / width))
-    this.setState({ progress })
-  }
-
-  _onTouchMoveContent = (event) => {
-    event.preventDefault()
-    const rect = event.target.getBoundingClientRect()
-    const offsetX = event.targetTouches[0].pageX - rect.left
+    let { offsetX } = event.nativeEvent
+    if (!offsetX) {
+      const rect = event.target.getBoundingClientRect()
+      offsetX = event.targetTouches[0].pageX - rect.left
+    }
     const { width } = this.props
     const progress = Math.max(0, Math.min(1, offsetX / width))
     this.setState({ progress })
