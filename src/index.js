@@ -7,7 +7,6 @@ import PropTypes from 'prop-types'
 import classNames from 'classnames'
 
 import BlockImage from 'react-block-image'
-import deviceDetect from 'react-device-detect'
 
 import styles from './styles.css'
 

@@ -31,8 +31,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
-    "react-block-image": "^1.0.0",
-    "react-device-detect": "^1.5.9"
+    "react-block-image": "^1.0.0"
   },
   "peerDependencies": {
     "prop-types": "^15.6.2",
