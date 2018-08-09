@@ -92,13 +92,16 @@ export default class BeforeAfterSlider extends Component {
         <div
           className={styles.wrapper}
           ref={this._contentRef}
-          onMouseMove={this._onMouseMoveWrapper}
+          onTouchMove={this._onMoveWrapper}
+          onMouseMove={this._onMoveWrapper}
         />
 
         <div
           className={styles.content}
-          onMouseMove={this._onMouseMoveContent}
+          onTouchMove={this._onMoveContent}
+          onMouseMove={this._onMoveContent}
         />
+
       </div>
     )
   }
@@ -107,15 +110,25 @@ export default class BeforeAfterSlider extends Component {
     this._content = ref
   }
 
-  _onMouseMoveWrapper = (event) => {
-    const { offsetX } = event.nativeEvent
+  _onMoveWrapper = (event) => {
+    event.preventDefault()
+    let { offsetX } = event.nativeEvent
+    if (!offsetX) {
+      const rect = event.target.getBoundingClientRect()
+      offsetX = event.targetTouches[0].pageX - rect.left
+    }
     const { width } = this.props
     const progress = Math.max(0, Math.min(1, (offsetX - width / 10) / width))
     this.setState({ progress })
   }
 
-  _onMouseMoveContent = (event) => {
-    const { offsetX } = event.nativeEvent
+  _onMoveContent = (event) => {
+    event.preventDefault()
+    let { offsetX } = event.nativeEvent
+    if (!offsetX) {
+      const rect = event.target.getBoundingClientRect()
+      offsetX = event.targetTouches[0].pageX - rect.left
+    }
     const { width } = this.props
     const progress = Math.max(0, Math.min(1, offsetX / width))
     this.setState({ progress })
